@@ -1,4 +1,4 @@
-# pinyougou
+# 品优购
 基于SOA架构一个综合性的B2B2C平台
 
 ### 一、品优购简介
@@ -16,14 +16,23 @@
 ### 三、涉及技术
 
 注册中心：Zookeeper
+
 安全框架：SpringSecurity
+
 分布式文件服务器：FastDFS
+
 缓存：Redis
+
 检索：sorl
+
 消息中间件：JMS
+
 短信解决方案：SpringBoot
+
 网页静态化：Freemarker
+
 支付：微信扫码支付
+
 
 ### 四、项目部署
 - 集群解决方案
