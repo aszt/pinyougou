@@ -1,6 +1,7 @@
 package com.pinyougou.sellergoods.service;
 
 import java.util.List;
+import java.util.Map;
 
 import com.pinyougou.pojo.TbBrand;
 
@@ -49,5 +50,7 @@ public interface BrandService {
 	public void delete(Long[] ids);
 	
 	public PageResult findPage(TbBrand brand, int pageNum, int pageSize);
+	
+	public List<Map> selectOptionList();
 	
 }
