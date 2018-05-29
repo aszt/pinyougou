@@ -26,10 +26,9 @@ app.controller('typeTemplateController' ,function($scope,$controller,typeTemplat
 	$scope.findOne=function(id){				
 		typeTemplateService.findOne(id).success(
 			function(response){
-				$scope.entity= response;		
-				
+				$scope.entity= response;
 				//转换字符串为json对象（集合）
-				$scope.entity.brandIds=  JSON.parse( $scope.entity.brandIds);
+				$scope.entity.brandIds=  JSON.parse($scope.entity.brandIds);
 				$scope.entity.specIds= JSON.parse($scope.entity.specIds);
 				$scope.entity.customAttributeItems = JSON.parse($scope.entity.customAttributeItems);
 				
