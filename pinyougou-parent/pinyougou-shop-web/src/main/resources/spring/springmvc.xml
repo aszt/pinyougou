@@ -14,14 +14,15 @@
 	    <bean class="com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter">  
 	      <property name="supportedMediaTypes" value="application/json"/>
 	      <property name="features">
-	        <array>
+	        <list>
 	          <value>WriteMapNullValue</value>
 	          <value>WriteDateUseDateFormat</value>
-	        </array>
+	        </list>
 	      </property>
 	    </bean>
 	  </mvc:message-converters>  
 	</mvc:annotation-driven>
+
 
 	<!-- 引用dubbo 服务 -->
 	<dubbo:application name="pinyougou-shop-web" />
