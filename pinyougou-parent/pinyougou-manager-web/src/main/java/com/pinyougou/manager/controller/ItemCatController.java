@@ -91,6 +91,13 @@ public class ItemCatController {
 	@RequestMapping("/delete")
 	public Result delete(Long [] ids){
 		try {
+			for (Long id : ids) {
+				List<TbItemCat> findByParentId = itemCatService.findByParentId(id);
+				if(findByParentId.size()>0){
+					return new Result(false, "请先删除下级分类"); 
+				}
+				break;
+			}
 			itemCatService.delete(ids);
 			return new Result(true, "删除成功"); 
 		} catch (Exception e) {
@@ -111,4 +118,13 @@ public class ItemCatController {
 		return itemCatService.findPage(itemCat, page, rows);		
 	}
 	
+	/**
+	 * 根据上级ID查询商品分类列表
+	 * @param parentId
+	 * @return
+	 */
+	@RequestMapping("/findByParentId")
+	public List<TbItemCat> findByParentId(Long parentId) {
+		return itemCatService.findByParentId(parentId);
+	}
 }
