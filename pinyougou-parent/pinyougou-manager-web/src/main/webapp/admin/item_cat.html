@@ -10,20 +10,23 @@
     <link rel="stylesheet" href="../plugins/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../plugins/adminLTE/css/AdminLTE.css">
     <link rel="stylesheet" href="../plugins/adminLTE/css/skins/_all-skins.min.css">
+    <!-- <link rel="stylesheet" href="../plugins/select2/select2.css" /> -->
     <link rel="stylesheet" href="../css/style.css">
 	<script src="../plugins/jQuery/jquery-2.2.3.min.js"></script>
     <script src="../plugins/bootstrap/js/bootstrap.min.js"></script>
     
     <script type="text/javascript" src="../plugins/angularjs/angular.min.js"></script>
 
+	<!-- <script type="text/javascript" src="../js/angular-select2.js"> </script> -->
 	<script type="text/javascript" src="../js/base.js"></script>
 	<script type="text/javascript" src="../js/service/itemCatService.js"></script>
+	<script type="text/javascript" src="../js/service/typeTemplateService.js"></script>
 	<script type="text/javascript" src="../js/controller/baseController.js"></script>
 	<script type="text/javascript" src="../js/controller/itemCatController.js"></script>
     
 </head>
 
-<body class="hold-transition skin-red sidebar-mini" ng-app="pinyougou" ng-controller="itemCatController" ng-init="findByParentId(0)">
+<body class="hold-transition skin-red sidebar-mini" ng-app="pinyougou" ng-controller="itemCatController" ng-init="findByParentId(0);findTypeTemplateList()">
   <!-- .box-body -->
                 
                     <div class="box-header with-border">
@@ -128,8 +131,8 @@
 		      		<td>类型模板</td>
 		      		<td>	
 		      			<input ng-model="entity.typeId" placeholder="商品类型模板" class="form-control" type="text"/>      		
-		      			<!-- <input select2 config="options['type_template']" placeholder="商品类型模板" class="form-control" type="text"/> -->
-		      		</td>		      		      		
+		      			<!-- <input select2 config="type_template" placeholder="商品类型模板" class="form-control" type="text"/>
+						<input select2 select2-model="entity.type_template"  config="type_template" multiple placeholder=" 商品类型模板 " class="form-control"> -->
 		      	</tr>		      	
 			 </table>				
 			

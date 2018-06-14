@@ -1,5 +1,5 @@
  //控制层 
-app.controller('itemCatController' ,function($scope,$controller   ,itemCatService){	
+app.controller('itemCatController' ,function($scope,$controller   ,itemCatService,typeTemplateService){	
 	
 	$controller('baseController',{$scope:$scope});//继承
 	
@@ -115,6 +115,18 @@ app.controller('itemCatController' ,function($scope,$controller   ,itemCatServic
 			$scope.entity_2=p_entity;
 		}
 		$scope.findByParentId(p_entity.id);
+	}
+	
+	
+	$scope.type_template={data:[]};
+	
+	//读取商品类型模板列表
+	$scope.findTypeTemplateList=function(){
+		typeTemplateService.selectOptionList().success(
+				function(response){
+					$scope.type_template={data:response};
+				}
+		);		
 	}
 	
 });	
